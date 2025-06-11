@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+
 function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -21,8 +22,8 @@ function Nav() {
           {/* Logo alinhada à esquerda */}
           <div className="flex-shrink-0">
             <img 
-              className="h-8 w-auto cursor-pointer" 
-              src="/caminho-para-sua-logo.png" 
+              className="h-20 w-auto cursor-pointer rounded-full" 
+              src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749610754/Branco_kec5wp.png"
               alt="Logo"
               onClick={() => handleNavigation('/home')} 
             />
