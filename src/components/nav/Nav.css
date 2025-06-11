@@ -24,7 +24,7 @@ nav.menu ul li a {
 }
 
 nav.menu ul li a:hover {
-    color: rgb(132, 0, 255); 
+    color: rgba(132, 0, 255, 0.623); 
 }
 .logo{
         width: 50px;
