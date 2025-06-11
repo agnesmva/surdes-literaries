@@ -10,6 +10,7 @@ import Breadcrumbs from './components/breadcrumbs/Breadcrumbs'
 //pages
 import Home from './pages/home/Home'
 import MainContent from './pages/home/Home'
+import Parcerias from './pages/parcerias/Parcerias'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Routes>
         <Route path="/home" element={<MainContent />} />
         <Route path="/home" element={<Home />} />
-        </Routes>
+        <Route path="/parcerias" element={<Parcerias />} />
+        </Routes >
         <Footer/>
     </Router>
   )
