@@ -49,7 +49,7 @@ function MainContent() {
         </p>
       </section>
        {/* Membro Lider*/}
-      <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
+      <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl">
         <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-12">Nossa Equipe</h2>
         <div className="relative overflow-hidden">
           <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
