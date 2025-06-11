@@ -45,7 +45,7 @@ function Parcerias() {
         <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8">
             {/* Vídeo 1 - Ocupa 100% em mobile e metade em desktop */}
             <div className="w-full md:w-[calc(50%-1rem)]">
-            <InstagramEmbed url="https://www.instagram.com/reel/DJU-YBhN_sU" />
+            <InstagramEmbed url="https://www.instagram.com/reel/DIxKM5itiDl/" />
             </div>
             
             {/* Vídeo 2 - Oculto em mobile, visível a partir de md */}
