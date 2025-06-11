@@ -11,7 +11,7 @@ function Parcerias() {
         <img 
           src={turquesaGif}
           alt="Decoração turquesa animada" 
-          className="w-48 md:w-64 h-auto"
+          className="w-20 md:w-20 h-auto"
           tabIndex="0"
         />
       </section>

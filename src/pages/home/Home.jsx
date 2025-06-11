@@ -56,7 +56,7 @@ function MainContent() {
             <div className="min-w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-0">
               {membros.filter(m => m.team === 'leader').map((membro, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden w-40 h-40 border-4 border-[#1C9997] mb-4 shadow-lg">
+                  <div className="rounded-full overflow-hidden w-25 h-25 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
                     <img 
                       src={membro.url} 
                       alt={`Foto de ${membro.name}`} 
@@ -80,7 +80,7 @@ function MainContent() {
             <div className="min-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {membros.filter(m => m.team !== 'leader').map((membro, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden w-40 h-40 border-4 border-[#1C9997] mb-4 shadow-lg">
+                  <div className="rounded-full overflow-hidden w-20 h-20 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
                     <img 
                       src={membro.url} 
                       alt={`Foto de ${membro.name}`} 
@@ -88,8 +88,8 @@ function MainContent() {
                       loading="lazy"
                     />
                   </div>
-                  <p className="text-lg text-gray-800">{membro.name}</p>
-                  <p>{membro.role}</p>
+                  <p className="text w-fit md:text-lg text-center text-gray-800">{membro.name}</p>
+                  <p className="text-sm md:text-lg text-center">{membro.role}</p>
                 </div>
               ))}
             </div>
