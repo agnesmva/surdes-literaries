@@ -17,7 +17,6 @@ function App() {
   return (
     <Router>
         <Nav/>
-        <Breadcrumbs />
         <Routes>
         <Route path="/home" element={<MainContent />} />
         <Route path="/home" element={<Home />} />
