@@ -9,7 +9,7 @@ function MainContent() {
 
   useEffect(() => {
     // Buscar membros do backend
-    axios.get('http://localhost:3000/api/members')
+    axios.get('https://sl-backend.up.railway.app/api/members')
       .then(response => {
         setMembros(response.data);
       })

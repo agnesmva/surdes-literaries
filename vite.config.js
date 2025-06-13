@@ -9,7 +9,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/members': 'http://localhost:3000'
+      '/members': 'http://sl-backend.up.railway.app'
     }
   }
 })
