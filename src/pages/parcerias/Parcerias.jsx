@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import turquesaGif from '../../assets/Turquesa.gif';
 import InstagramEmbed from '../../contexts/InstagramEmbed.jsx';
 
- useEffect(() => {
+ 
+function Parcerias() {
+  useEffect(() => {
     document.title = "Parcerias";
   }, []);
 
-function Parcerias() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header - Mantendo o mesmo estilo das outras páginas */}

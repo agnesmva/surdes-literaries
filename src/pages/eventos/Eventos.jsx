@@ -4,14 +4,11 @@ import turquesaGif from '../../assets/Turquesa.gif';
 import { HiOutlineExclamationTriangle, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
 
 
-  useEffect(() => {
+function Eventos() {
+   useEffect(() => {
     document.title = "Eventos";
   }, []);
-
-  return <div>Conteúdo da Home</div>;
-
-
-function Eventos() {
+  
   return (
     <main className="min-h-screen bg-white">
       {/* Header - Mantendo o mesmo estilo das outras páginas */}

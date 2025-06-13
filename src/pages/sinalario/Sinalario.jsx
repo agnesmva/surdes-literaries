@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import turquesaGif from '../../assets/Turquesa.gif';
 import { HiSearch, HiFilter, HiChevronDown, HiChevronUp } from 'react-icons/hi';
 
