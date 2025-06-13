@@ -1,6 +1,12 @@
 import React from 'react';
+import { useEffect } from 'react';
 import turquesaGif from '../../assets/Turquesa.gif';
 import { HiOutlineExclamationTriangle, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
+
+  useEffect(() => {
+    document.title = "Clube de Leitura";
+  }, []);
+
 
 function Clube() {
   return (

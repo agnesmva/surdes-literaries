@@ -34,6 +34,10 @@ function Sinalario() {
     return matchesFilter && matchesSearch;
   });
 
+    useEffect(() => {
+    document.title = "Sinalário";
+  }, []);
+
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}

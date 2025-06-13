@@ -18,6 +18,9 @@ function MainContent() {
       });
   }, []);
 
+  useEffect(() => {
+    document.title = "Surdes Literaries";
+  }, []);
 
   return (
     <main className="min-h-screen bg-white">

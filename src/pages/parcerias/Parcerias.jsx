@@ -2,6 +2,10 @@ import React from 'react';
 import turquesaGif from '../../assets/Turquesa.gif';
 import InstagramEmbed from '../../contexts/InstagramEmbed.jsx';
 
+ useEffect(() => {
+    document.title = "Parcerias";
+  }, []);
+
 function Parcerias() {
   return (
     <main className="min-h-screen bg-white">

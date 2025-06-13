@@ -22,6 +22,7 @@ function App() {
     <Router>
         <Nav/>
         <Routes>
+          <Route path="/" element={<MainContent />} />
         <Route path="/home" element={<MainContent />} />
         <Route path="/home" element={<Home />} />
         <Route path="/eventos" element={<Eventos />} />
