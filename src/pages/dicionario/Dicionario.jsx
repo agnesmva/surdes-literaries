@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import turquesaGif from '../../assets/Turquesa.gif';
 import { HiSearch, HiFilter, HiChevronDown, HiChevronUp } from 'react-icons/hi';
 
-function Sinalario() {
+function Dicionario() {
   const [activeFilter, setActiveFilter] = useState('Todos');
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedSignal, setExpandedSignal] = useState(null);
@@ -35,14 +35,14 @@ function Sinalario() {
   });
 
     useEffect(() => {
-    document.title = "Sinalário";
+    document.title = "Dicionário";
   }, []);
 
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
       <section className="flex justify-between items-center px-0 py-0 mx-10 md:max-w-6xl md:mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Sinalário Literário</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Dicionário de Sinais Literários</h1>
         <img 
           src={turquesaGif}
           alt="Decoração turquesa animada" 
@@ -144,4 +144,4 @@ function Sinalario() {
   );
 }
 
-export default Sinalario;
+export default Dicionario;

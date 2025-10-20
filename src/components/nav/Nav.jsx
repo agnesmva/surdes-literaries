@@ -33,10 +33,12 @@ function Nav() {
           <div className="hidden md:flex space-x-8">
             {[
               { path: '/home', label: 'Início' },
-              { path: '/parcerias', label: 'Parcerias' },
-              { path: '/eventos', label: 'Eventos' },
               { path: '/clube', label: 'Clube de Leitura' },
-              { path: '/sinalario', label: 'Sinalário Literário' },
+              { path: '/eventos', label: 'Eventos' },
+              { path: '/parcerias', label: 'Parcerias' },
+              { path: '/cursos', label: 'Cursos' },
+              { path: '/loja', label: 'Loja' },
+              { path: '/dicionario', label: 'Dicionário de Sinais Literários' },
             ].map((item) => (
               <button
                 key={item.path}
@@ -74,10 +76,12 @@ function Nav() {
             <div className="space-y-6">
               {[
                 { path: '/home', label: 'Início' },
-                { path: '/parcerias', label: 'Parcerias' },
-                { path: '/eventos', label: 'Eventos' },
                 { path: '/clube', label: 'Clube de Leitura' },
-                { path: '/sinalario', label: 'Sinalário Literário' },
+                { path: '/eventos', label: 'Eventos' },
+                { path: '/parcerias', label: 'Parcerias' },
+                { path: '/cursos', label: 'Cursos' },
+                { path: '/loja', label: 'Loja' },
+                { path: '/dicionario', label: 'Dicionário de Sinais Literários' },
               ].map((item) => (
                 <button
                   key={item.path}

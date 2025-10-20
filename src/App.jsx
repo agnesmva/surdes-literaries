@@ -13,7 +13,9 @@ import MainContent from './pages/home/Home'
 import Parcerias from './pages/parcerias/Parcerias'
 import Eventos from './pages/eventos/Eventos'
 import Clube from './pages/clube/Clube'
-import Sinalario from './pages/sinalario/Sinalario'
+import Dicionario from './pages/dicionario/Dicionario'
+import Loja from './pages/loja/Loja'
+import Cursos from './pages/cursos/Cursos.jsx'
 
 
 function App() {
@@ -27,8 +29,10 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/clube" element={<Clube />} />
-        <Route path="/sinalario" element={<Sinalario />} />
+        <Route path="/dicionario" element={<Dicionario />} />
         <Route path="/parcerias" element={<Parcerias />} />
+        <Route path="/loja" element={<Loja />} />
+        <Route path="/cursos" element={<Cursos />} />
         </Routes >
         <Footer/>
     </Router>

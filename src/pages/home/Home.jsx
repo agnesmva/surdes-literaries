@@ -27,7 +27,7 @@ function MainContent() {
 
       {/* Header */}
       <section className="flex justify-between items-center px-0 py-0 mx-10 md:max-w-6xl md:mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Surdes Literários</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Surdes Literáries</h1>
         <img
           src={turquesaGif}
           alt="Decoração turquesa animada"
@@ -48,7 +48,27 @@ function MainContent() {
           Composto por nove membros surdos apaixonados por livros, histórias em quadrinhos, mangás e cinemas.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed">
-          <br />Seja bem-vinde ao nosso espaço, onde a magia dos sinais e das palavras se encontram.
+          <br />Seja bem-vindo(a/e) ao nosso espaço, onde a magia dos sinais e das palavras se encontram.
+        </p>
+        <p className="text-lg text-gray-700 leading-relaxed">
+            <br />
+            <a 
+              href="https://cobranca.c6pix.com.br/01K7D8G3RC0GETNGKDEPMGWD8Y" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="
+                text-blue-600       
+                underline
+                hover:text-blue-800
+                hover:no-underline
+                focus:outline-none
+                focus:ring-2
+                focus:ring-blue-300
+              "
+            >
+                Apoie o projeto Surdos Literários
+            </a>
+            ! Qualquer valor ajuda a manter nosso trabalho acessível e inclusivo.
         </p>
       </section>
        {/* Membro Lider*/}
