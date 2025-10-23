@@ -14,14 +14,14 @@ function Clube() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header - Mantendo o mesmo estilo das outras páginas */}
-      <section className="flex justify-between items-center px-0 py-0 mx-10 md:max-w-6xl md:mx-auto">
+      <section className="flex flex-col items-center mx-10 md:max-w-6xl md:mx-auto pt-16">
         <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Clube de Leitura</h1>
-        <img 
+        {/* <img 
           src={turquesaGif}
           alt="Decoração turquesa animada" 
           className="w-20 md:w-20 h-auto"
           tabIndex="0"
-        />
+        /> */}
       </section>
 
       {/* Página em construção */}

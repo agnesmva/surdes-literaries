@@ -11,21 +11,21 @@ function Parcerias() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header - Mantendo o mesmo estilo das outras páginas */}
-      <section className="flex justify-between items-center px-0 py-0 mx-10 md:max-w-6xl md:mx-auto">
+      <section className="flex flex-col items-center mx-10 md:max-w-6xl md:mx-auto pt-16">
         <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Parcerias</h1>
-        <img 
+        {/* <img 
           src={turquesaGif}
           alt="Decoração turquesa animada" 
           className="w-20 md:w-20 h-auto"
           tabIndex="0"
-        />
+        /> */}
       </section>
 
       {/* Bloco de texto */}
-      <section className='px-4 mx-10 md:mx-auto md:px-0 md:py-8 md:max-w-5xl'>
+      <section className='px-4 mx-10 md:mx-auto md:px-0 md:py-8 md:max-w-5xl text-center'>
         <div className="text-lg text-gray-700 leading-relaxed space-y-4">
           <p>
-            <strong className="text-[#1C9997]">A K&K Libras</strong> é uma empresa que auxilia na inclusão de pessoas surdas, 
+           A <strong className="text-[#1C9997]"> K&K Libras</strong> é uma empresa que auxilia na inclusão de pessoas surdas, 
             por meio de interpretação em Libras em empresas e cursos, conta com Surdes Literáries 
             para divulgação dos minicursos de leituras guiadas.
           </p>
@@ -55,7 +55,7 @@ function Parcerias() {
             
             {/* Vídeo 2 - Oculto em mobile, visível a partir de md */}
             <div className="w-full md:w-[calc(50%-1rem)]">
-            <InstagramEmbed url="https://www.instagram.com/reel/DJU-YBhN_sU" />
+            <InstagramEmbed url="https://www.instagram.com/reel/C6HyQyOpWzI/" />
             </div>
         </div>
         </section>
