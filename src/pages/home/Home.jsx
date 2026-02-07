@@ -118,7 +118,7 @@ function MainContent() {
       <li><strong>Aldir Junior</strong><br />criador de conteúdo</li>
       <li><strong>Dario Diniz</strong><br />dublador</li>
       <li><strong>Elis de Jesus</strong><br />revisora de textos</li>
-      <li><strong>Ferdinand Oliveira</strong><br />criador de conteúdo</li>
+      <li><strong>Ferdinand Oliveira</strong><br />criadore de conteúdo</li>
     </ul>
 
     <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
@@ -130,8 +130,8 @@ function MainContent() {
 
     <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
       <li><strong>Vanessa Santos</strong><br />edição de vídeos</li>
-      <li><strong>Rafael Oliveira</strong><br />criador de conteúdo</li>  
-      <li><strong>Gisele</strong><br />pesquisadora</li>
+      <li><strong>Rafael Oliveira</strong><br />designer</li>  
+      <li><strong>Gisele</strong><br />advogada</li>
     </ul>
 
   </div>
