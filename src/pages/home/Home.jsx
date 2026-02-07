@@ -131,7 +131,7 @@ function MainContent() {
     <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
       <li><strong>Vanessa Santos</strong><br />edição de vídeos</li>
       <li><strong>Rafael Oliveira</strong><br />designer</li>  
-      <li><strong>Gisele</strong><br />advogada</li>
+      <li><strong>Gisele Virgínio</strong><br />advogada</li>
     </ul>
 
   </div>
