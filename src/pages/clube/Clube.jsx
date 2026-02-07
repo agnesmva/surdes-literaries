@@ -55,7 +55,7 @@ function Clube() {
             </div>
             
             {/* Vídeo 2 - Oculto em mobile, visível a partir de md */}
-            <div className="w-full md:w-[calc(50%-1rem)]">
+            <div className="w-full md:w-[calc(50%-1rem)] mb-8 md:mb-0">
             <img src={encontro2} alt="Imagem do Encontro 2" className="w-full h-auto rounded-lg shadow-md" />
             </div>
         </div> 

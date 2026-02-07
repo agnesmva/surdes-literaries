@@ -75,7 +75,7 @@ function Parcerias() {
             </div>
             
             {/* Vídeo 2 - Oculto em mobile, visível a partir de md */}
-            <div className="w-full md:w-[calc(50%-1rem)]">
+            <div className="w-full md:w-[calc(50%-1rem)] mb-8 md:mb-0">
             <img src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749612534/image_5_qexdht.png" alt="" />
             </div>
         </div> 
