@@ -97,8 +97,48 @@ function MainContent() {
           ! Qualquer valor ajuda a manter nosso trabalho acessível e inclusivo.
         </p>
       </section>
+<section className="px-4 mx-10 md:px-8 md:mx-auto md:max-w-5xl py-12">
+  <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-6">
+    Nossa Equipe
+  </h2>
 
-      {/* Líder */}
+  <p className="text-center text-lg text-gray-700 mb-8">
+    Agradecemos às pessoas que contribuíram para o desenvolvimento do projeto
+    em diferentes momentos.
+  </p>
+
+  <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+  gap-8
+  justify-items-center
+  max-w-4xl
+  mx-auto
+">
+
+    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
+      <li><strong>Aldir Junior</strong><br />criador de conteúdo</li>
+      <li><strong>Dario Diniz</strong><br />dublador</li>
+      <li><strong>Elis de Jesus</strong><br />revisora de textos</li>
+      <li><strong>Ferdinand Oliveira</strong><br />criador de conteúdo</li>
+    </ul>
+
+    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
+      <li><strong>Hidel Silva</strong><br />dublador</li>
+      <li><strong>Mayara Silva</strong><br />dubladora</li>
+      <li><strong>Marina Souza</strong><br />pesquisadora</li>
+      <li><strong>Pablo Dassero</strong><br />dublador</li>
+    </ul>
+
+    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
+      <li><strong>Vanessa Santos</strong><br />edição de vídeos</li>
+      <li><strong>Rafael Oliveira</strong><br />criador de conteúdo</li>  
+      <li><strong>Gisele</strong><br />pesquisadora</li>
+    </ul>
+
+  </div>
+</section>
+
+
+      {/*  Lider
       <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl">
         <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-12">
           Nossa Equipe
@@ -120,9 +160,11 @@ function MainContent() {
           </div>
         </div>
       </section>
+       */}
+     
 
-      {/* Membros */}
-      <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
+      {/* 
+        <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
           <Membro img={Agnes} nome="Agnes" cargo="Web designer" />
@@ -145,6 +187,9 @@ function MainContent() {
 
         </div>
       </section>
+        
+      */}
+      
 
     </main>
   );
