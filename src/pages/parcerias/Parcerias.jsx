@@ -25,7 +25,7 @@ function Parcerias() {
       <section className='px-4 mx-10 md:mx-auto md:px-0 md:py-8 md:max-w-5xl text-center'>
         <div className="text-lg text-gray-700 leading-relaxed space-y-4">
           <p>
-           A <strong className="text-[#1C9997]"> K&K Libras</strong> é uma empresa que auxilia na inclusão de pessoas surdas, 
+           A <a href="https://kklibras.com.br/" target='_blank'><strong className="text-[#1C9997]"> K&K Libras</strong></a> é uma empresa que auxilia na inclusão de pessoas surdas, 
             por meio de interpretação em Libras em empresas e cursos, conta com Surdes Literáries 
             para divulgação dos minicursos de leituras guiadas.
           </p>
