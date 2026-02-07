@@ -125,12 +125,12 @@ function MainContent() {
       <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-          <Membro img={Agnes} nome="Agnes" cargo="Membro" />
-          <Membro img={Airam} nome="Airam" cargo="Membro" />
+          <Membro img={Agnes} nome="Agnes" cargo="Web designer" />
+          <Membro img={Airam} nome="Airam" cargo="Dublador" />
           <Membro img={Aldir} nome="Aldir" cargo="Membro" />
-          <Membro img={Aline} nome="Aline" cargo="Membro" />
-          <Membro img={Ana} nome="Ana" cargo="Membro" />
-          <Membro img={Andrew} nome="Andrew" cargo="Membro" />
+          <Membro img={Aline} nome="Aline" cargo="Dubladora" />
+          <Membro img={Ana} nome="Ana" cargo="Líder de Design" />
+          <Membro img={Andrew} nome="Andrew" cargo="Dublador" />
           <Membro img={Cass} nome="Cass" cargo="Membro" />
           <Membro img={Elis} nome="Elis" cargo="Membro" />
           <Membro img={Ferdi} nome="Ferdi" cargo="Membro" />
@@ -141,7 +141,7 @@ function MainContent() {
           <Membro img={Murilo} nome="Murilo" cargo="Membro" />
           <Membro img={Rafael} nome="Rafael" cargo="Membro" />
           <Membro img={Valdo} nome="Valdo" cargo="Membro" />
-          <Membro img={Vivian} nome="Vivian" cargo="Membro" />
+          <Membro img={Vivian} nome="Vivian" cargo="Apoio à Liderança" />
 
         </div>
       </section>
