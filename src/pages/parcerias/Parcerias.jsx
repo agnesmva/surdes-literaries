@@ -71,12 +71,12 @@ function Parcerias() {
         <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8">
             {/* Vídeo 1 - Ocupa 100% em mobile e metade em desktop */}
             <div className="w-full md:w-[calc(50%-1rem)]">
-            <img src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749612535/image_4_rbn5ua.png" alt="" />
+            <img src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749612535/image_4_rbn5ua.png" alt=""  className="w-full h-auto rounded-lg shadow-md"/>
             </div>
             
             {/* Vídeo 2 - Oculto em mobile, visível a partir de md */}
             <div className="w-full md:w-[calc(50%-1rem)] mb-8 md:mb-0">
-            <img src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749612534/image_5_qexdht.png" alt="" />
+            <img src="https://res.cloudinary.com/dwkzysoyd/image/upload/v1749612534/image_5_qexdht.png" alt="" className="w-full h-auto rounded-lg shadow-md" />
             </div>
         </div> 
         </section>
