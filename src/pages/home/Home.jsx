@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import turquesaGif from '../../assets/Turquesa.gif';
+import dannikiFoto from '../../assets/img/Danniki.jpg';
 
 function MainContent() {
    const [membros, setMembros] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [equipeIndex, setEquipeIndex] = useState(0);
 
   useEffect(() => {
     // Buscar membros do backend
@@ -37,61 +39,137 @@ function MainContent() {
       </section>
 
       {/* Parágrafo */}
-      <section className="px-4 mx-10 md:mx-auto md:px-0 md:py-8 md:max-w-5xl text-center">
+      <section className="px-4 mx-10 md:mx-auto md:px-0 md:max-w-5xl text-center">
         <p className="text-lg text-gray-700 leading-relaxed">
-          Surdes Literáries é um coletivo voluntário dedicado a promover a literatura no âmbito da <strong className="text-[#1C9997]">Comunidade Surda</strong>.
+          Seja bem-vindo(a/e) ao nosso espaço, onde a magia dos sinais e das palavras se conecta.
         </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Nosso objetivo é compartilhar recomendações, registrar sinais literários, notificar as atualidades do mundo literários etc., <br /> a fim de promover a inclusão de obras acessíveis para pessoas surdas sinalizantes.
+        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+          O <strong className="text-[#1C9997]">Surdes Literáries</strong> é um coletivo voluntário composto por membros da <strong className="text-[#1C9997]">Comunidade Surda</strong> que compartilham a paixão por livros, HQs, mangás e cinema. O propósito é fortalecer a literatura acessível, registrando sinais literários, compartilhando resenhas, divulgando notícias do meio cultural e gerando inclusão.
         </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Composto por nove membros surdos apaixonados por livros, histórias em quadrinhos, mangás e cinemas.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          <br />Seja bem-vindo(a/e) ao nosso espaço, onde a magia dos sinais e das palavras se encontram.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-            <br />
-            <a 
-              href="https://cobranca.c6pix.com.br/01K7D8G3RC0GETNGKDEPMGWD8Y" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="
-                text-blue-600       
-                underline
-                hover:text-blue-800
-                hover:no-underline
-                focus:outline-none
-                focus:ring-2
-                focus:ring-blue-300
-              "
-            >
-                Apoie o projeto Surdos Literários
-            </a>
-            ! Qualquer valor ajuda a manter nosso trabalho acessível e inclusivo.
+        <div className="flex justify-center mt-6">
+          <a
+            href="https://cobranca.c6pix.com.br/01K7D8G3RC0GETNGKDEPMGWD8Y"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              font-semibold
+              text-white
+              bg-[#1C9997]
+              px-8
+              py-3
+              rounded-lg
+              hover:bg-[#158a83]
+              transition-colors
+              focus:outline-none
+              focus:ring-2
+              focus:ring-[#1C9997]
+              focus:ring-offset-2
+            "
+          >
+            Apoie o Surdes Literáries!
+          </a>
+        </div>
+        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+          Sua contribuição de qualquer valor, é fundamental para mantermos nossa produção de conteúdo acessível e inclusiva.
         </p>
       </section>
-       {/* Membro Lider*/}
-      <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl">
+       {/* Nossa Equipe Carrossel */}
+      <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl mt-12">
         <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-12">Nossa Equipe</h2>
-        <div className="relative overflow-hidden">
-          <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-            <div className="min-w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-0">
-              {membros.filter(m => m.team === 'leader').map((membro, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden w-25 h-25 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
-                    <img 
-                      src={membro.url} 
-                      alt={`Foto de ${membro.name}`} 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="text-lg text-gray-800">{membro.name}</p>
-                  <p>{membro.role}</p>
-                </div>
-              ))}
+
+        <div className="relative">
+          <div className="flex items-center justify-center gap-2 md:gap-8">
+            <button
+              onClick={() => setEquipeIndex((prev) => (prev - 1 + 10) % 10)}
+              className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+              aria-label="Membro anterior"
+            >
+              <HiChevronLeft className="text-2xl md:text-3xl text-[#1C9997]" />
+            </button>
+
+            <div className="w-full md:w-auto">
+              {(() => {
+                const membrosEquipe = [
+                  { name: 'Danniki Martins', role: 'Líder', foto: dannikiFoto },
+                  { name: 'Membro 1', role: 'Cargo 1', foto: null },
+                  { name: 'Membro 2', role: 'Cargo 2', foto: null },
+                  { name: 'Membro 3', role: 'Cargo 3', foto: null },
+                  { name: 'Membro 4', role: 'Cargo 4', foto: null },
+                  { name: 'Membro 5', role: 'Cargo 5', foto: null },
+                  { name: 'Membro 6', role: 'Cargo 6', foto: null },
+                  { name: 'Membro 7', role: 'Cargo 7', foto: null },
+                  { name: 'Membro 8', role: 'Cargo 8', foto: null },
+                  { name: 'Membro 9', role: 'Cargo 9', foto: null },
+                ];
+
+                return (
+                  <>
+                    {/* Mobile: uma pessoa por vez */}
+                    <div className="md:hidden flex flex-col items-center">
+                      {(() => {
+                        const membro = membrosEquipe[equipeIndex % 10];
+                        return (
+                          <>
+                            <div className="rounded-full overflow-hidden w-24 h-24 sm:w-32 sm:h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                              {membro.foto && (
+                                <img
+                                  src={membro.foto}
+                                  alt={`Foto de ${membro.name}`}
+                                  className="w-full h-full object-cover"
+                                  loading="lazy"
+                                />
+                              )}
+                            </div>
+                            <p className="text-lg font-semibold text-center text-[#1C9997]">
+                              {membro.name}
+                            </p>
+                            <p className="text-md text-center text-gray-600">
+                              {membro.role}
+                            </p>
+                          </>
+                        );
+                      })()}
+                    </div>
+
+                    {/* Desktop: três pessoas lado a lado */}
+                    <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-8 md:min-w-max">
+                      {[0, 1, 2].map((offset) => {
+                        const index = (equipeIndex + offset) % 10;
+                        const membro = membrosEquipe[index];
+                        return (
+                          <div key={index} className="flex flex-col items-center">
+                            <div className="rounded-full overflow-hidden w-32 h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                              {membro.foto && (
+                                <img
+                                  src={membro.foto}
+                                  alt={`Foto de ${membro.name}`}
+                                  className="w-full h-full object-cover"
+                                  loading="lazy"
+                                />
+                              )}
+                            </div>
+                            <p className="text-lg font-semibold text-center text-[#1C9997]">
+                              {membro.name}
+                            </p>
+                            <p className="text-md text-center text-gray-600">
+                              {membro.role}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })()}
             </div>
+
+            <button
+              onClick={() => setEquipeIndex((prev) => (prev + 1) % 10)}
+              className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+              aria-label="Próximo membro"
+            >
+              <HiChevronRight className="text-2xl md:text-3xl text-[#1C9997]" />
+            </button>
           </div>
         </div>
       </section>

@@ -41,8 +41,9 @@ function Footer() {
         <div className="text-l space-y-1">
           <p>
             <a
-              href="/fale-conosco"
+              href="https://docs.google.com/forms/d/1OiBetnpjQvOr2AWB2hc7N4Ie2dOLKSpnyWUskbWXrF8/viewform?edit_requested=true"
               className=" hover:text-[#003C43] focus:outline-none focus:ring-2 focus:ring-white rounded"
+              target='blank'
             >
               Fale Conosco
             </a>
