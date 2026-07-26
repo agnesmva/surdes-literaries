@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
-
-/* Assets */
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import turquesaGif from '../../assets/Turquesa.gif';
-
-
-/* Imagens - Líder */
-import Lider from '../../assets/img/Danniki.jpg';
-
-/* Imagens - Membros */
+import dannikiFoto from '../../assets/img/Danniki.jpg';
 import Agnes from '../../assets/img/Agnes.jpg';
 import Airam from '../../assets/img/Airam.jpg';
 import Aldir from '../../assets/img/Aldir.jpg';
@@ -26,27 +21,24 @@ import Rafael from '../../assets/img/Rafael.jpg';
 import Valdo from '../../assets/img/Valdo.jpg';
 import Vivian from '../../assets/img/Vivian.jpg';
 
-function Membro({ img, nome, cargo }) {
-  return (
-    <div className="flex flex-col items-center">
-      <div className="rounded-full overflow-hidden w-20 h-20 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
-        <img
-          src={img}
-          alt={`Foto de ${nome}`}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
-      <p className="text w-fit md:text-lg text-center text-gray-800">{nome}</p>
-      <p className="text-sm md:text-lg text-center">{cargo}</p>
-    </div>
-  );
-}
-
 function MainContent() {
+   const [membros, setMembros] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [equipeIndex, setEquipeIndex] = useState(0);
 
   useEffect(() => {
-    document.title = 'Surdes Literáries';
+    // Buscar membros do backend
+    axios.get('https://sl-backend.up.railway.app/api/members')
+      .then(response => {
+        setMembros(response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar membros:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    document.title = "Surdes Literaries";
   }, []);
 
   return (
@@ -54,143 +46,174 @@ function MainContent() {
 
       {/* Header */}
       <section className="flex flex-col items-center mx-10 md:max-w-6xl md:mx-auto pt-16">
-        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">
-          Surdes Literáries
-        </h1>
-
+        <h1 className="text-3xl md:text-5xl font-bold text-[#1C9997]">Surdes Literáries</h1>
         <img
           src={turquesaGif}
           alt="Decoração turquesa animada"
           className="w-48 md:w-64 h-auto"
+          tabIndex="0"
         />
       </section>
 
-      {/* Texto institucional */}
-      <section className="px-4 mx-10 md:mx-auto md:px-0 md:py-8 md:max-w-5xl text-center space-y-4">
+      {/* Parágrafo */}
+      <section className="px-4 mx-10 md:mx-auto md:px-0 md:max-w-5xl text-center">
         <p className="text-lg text-gray-700 leading-relaxed">
-          Surdes Literáries é um coletivo voluntário dedicado a promover a literatura no âmbito da{' '}
-          <strong className="text-[#1C9997]">Comunidade Surda</strong>.
+          Seja bem-vindo(a/e) ao nosso espaço, onde a magia dos sinais e das palavras se conecta.
         </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Nosso objetivo é compartilhar recomendações, registrar sinais literários,
-          notificar atualidades do mundo literário e promover inclusão.
+        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+          O <strong className="text-[#1C9997]">Surdes Literáries</strong> é um coletivo voluntário composto por membros da <strong className="text-[#1C9997]">Comunidade Surda</strong> que compartilham a paixão por livros, HQs, mangás e cinema. O propósito é fortalecer a literatura acessível, registrando sinais literários, compartilhando resenhas, divulgando notícias do meio cultural e gerando inclusão.
         </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Composto por nove membros surdos apaixonados por livros, HQs, mangás e cinema.
-        </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Seja bem-vindo(a/e) ao nosso espaço, onde a magia dos sinais e das palavras se encontram.
-        </p>
-
-        <p className="text-lg text-gray-700 leading-relaxed">
+        <div className="flex justify-center mt-6">
           <a
             href="https://cobranca.c6pix.com.br/01K7D8G3RC0GETNGKDEPMGWD8Y"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 underline hover:text-blue-800 hover:no-underline"
+            className="
+              font-semibold
+              text-white
+              bg-[#1C9997]
+              px-8
+              py-3
+              rounded-lg
+              hover:bg-[#158a83]
+              transition-colors
+              focus:outline-none
+              focus:ring-2
+              focus:ring-[#1C9997]
+              focus:ring-offset-2
+            "
           >
-            Apoie o projeto Surdos Literários
+            Apoie o Surdes Literáries!
           </a>
-          ! Qualquer valor ajuda a manter nosso trabalho acessível e inclusivo.
+        </div>
+        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+          Sua contribuição de qualquer valor, é fundamental para mantermos nossa produção de conteúdo acessível e inclusiva.
         </p>
       </section>
-<section className="px-4 mx-10 md:px-8 md:mx-auto md:max-w-5xl py-12">
-  <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-6">
-    Nossa Equipe
-  </h2>
+       {/* Nossa Equipe Carrossel */}
+      <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl mt-12">
+        <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-12">Nossa Equipe</h2>
 
-  <p className="text-center text-lg text-gray-700 mb-8">
-    Agradecemos às pessoas que contribuíram para o desenvolvimento do projeto
-    em diferentes momentos.
-  </p>
+        <div className="relative">
+          <div className="flex items-center justify-center gap-2 md:gap-8">
+            <button
+              onClick={() => setEquipeIndex((prev) => (prev - 1 + 10) % 10)}
+              className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+              aria-label="Membro anterior"
+            >
+              <HiChevronLeft className="text-2xl md:text-3xl text-[#1C9997]" />
+            </button>
 
-  <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
-  gap-8
-  justify-items-center
-  max-w-4xl
-  mx-auto
-">
+            <div className="w-full md:w-auto">
+              {(() => {
+                const membrosEquipe = [
+                  { name: 'Danniki Martins', role: 'Líder', foto: dannikiFoto },
+                  { name: 'Agnes', role: 'Membro', foto: Agnes },
+                  { name: 'Airam', role: 'Membro', foto: Airam },
+                  { name: 'Aldir', role: 'Membro', foto: Aldir },
+                  { name: 'Aline', role: 'Membro', foto: Aline },
+                  { name: 'Ana', role: 'Membro', foto: Ana },
+                  { name: 'Andrew', role: 'Membro', foto: Andrew },
+                  { name: 'Cass', role: 'Membro', foto: Cass },
+                  { name: 'Elis', role: 'Membro', foto: Elis },
+                  { name: 'Ferdi', role: 'Membro', foto: Ferdi },
+                ];
 
-    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
-      <li><strong>Aldir Junior</strong><br />criador de conteúdo</li>
-      <li><strong>Dario Diniz</strong><br />dublador</li>
-      <li><strong>Elis de Jesus</strong><br />revisora de textos</li>
-      <li><strong>Ferdinand Oliveira</strong><br />criadore de conteúdo</li>
-    </ul>
+                return (
+                  <>
+                    {/* Mobile: uma pessoa por vez */}
+                    <div className="md:hidden flex flex-col items-center">
+                      {(() => {
+                        const membro = membrosEquipe[equipeIndex % 10];
+                        return (
+                          <>
+                            <div className="rounded-full overflow-hidden w-24 h-24 sm:w-32 sm:h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                              {membro.foto && (
+                                <img
+                                  src={membro.foto}
+                                  alt={`Foto de ${membro.name}`}
+                                  className="w-full h-full object-cover"
+                                  loading="lazy"
+                                />
+                              )}
+                            </div>
+                            <p className="text-lg font-semibold text-center text-[#1C9997]">
+                              {membro.name}
+                            </p>
+                            <p className="text-md text-center text-gray-600">
+                              {membro.role}
+                            </p>
+                          </>
+                        );
+                      })()}
+                    </div>
 
-    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
-      <li><strong>Hidel Silva</strong><br />dublador</li>
-      <li><strong>Mayara Silva</strong><br />dubladora</li>
-      <li><strong>Marina Souza</strong><br />pesquisadora</li>
-      <li><strong>Pablo Dassero</strong><br />dublador</li>
-    </ul>
-
-    <ul className="text-gray-800 text-base md:text-lg space-y-2 text-center">
-      <li><strong>Vanessa Santos</strong><br />edição de vídeos</li>
-      <li><strong>Rafael Oliveira</strong><br />designer</li>  
-      <li><strong>Gisele Virgínio</strong><br />advogada</li>
-    </ul>
-
-  </div>
-</section>
-
-
-      {/*  Lider
-      <section className="relative px-4 mx-10 md:px-8 md:mx-auto md:max-w-6xl">
-        <h2 className="text-3xl font-bold text-center text-[#1C9997] mb-12">
-          Nossa Equipe
-        </h2>
-
-        <div className="flex justify-center">
-          <div className="flex flex-col items-center">
-            <div className="rounded-full overflow-hidden w-25 h-25 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
-              <img
-                src={Lider}
-                alt="Foto de Danniki"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+                    {/* Desktop: três pessoas lado a lado */}
+                    <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-8 md:min-w-max">
+                      {[0, 1, 2].map((offset) => {
+                        const index = (equipeIndex + offset) % 10;
+                        const membro = membrosEquipe[index];
+                        return (
+                          <div key={index} className="flex flex-col items-center">
+                            <div className="rounded-full overflow-hidden w-32 h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                              {membro.foto && (
+                                <img
+                                  src={membro.foto}
+                                  alt={`Foto de ${membro.name}`}
+                                  className="w-full h-full object-cover"
+                                  loading="lazy"
+                                />
+                              )}
+                            </div>
+                            <p className="text-lg font-semibold text-center text-[#1C9997]">
+                              {membro.name}
+                            </p>
+                            <p className="text-md text-center text-gray-600">
+                              {membro.role}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })()}
             </div>
 
-            <p className="text-lg text-gray-800">Danniki</p>
-            <p className="text-sm text-gray-600">Líder</p>
+            <button
+              onClick={() => setEquipeIndex((prev) => (prev + 1) % 10)}
+              className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+              aria-label="Próximo membro"
+            >
+              <HiChevronRight className="text-2xl md:text-3xl text-[#1C9997]" />
+            </button>
           </div>
         </div>
       </section>
-       */}
-     
 
-      {/* 
-        <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-          <Membro img={Agnes} nome="Agnes" cargo="Web designer" />
-          <Membro img={Airam} nome="Airam" cargo="Dublador" />
-          <Membro img={Aldir} nome="Aldir" cargo="Membro" />
-          <Membro img={Aline} nome="Aline" cargo="Dubladora" />
-          <Membro img={Ana} nome="Ana" cargo="Líder de Design" />
-          <Membro img={Andrew} nome="Andrew" cargo="Dublador" />
-          <Membro img={Cass} nome="Cass" cargo="Membro" />
-          <Membro img={Elis} nome="Elis" cargo="Membro" />
-          <Membro img={Ferdi} nome="Ferdi" cargo="Membro" />
-          <Membro img={Germano} nome="Germano" cargo="Membro" />
-          <Membro img={Giselle} nome="Giselle" cargo="Membro" />
-          <Membro img={Hidel} nome="Hidel" cargo="Membro" />
-          <Membro img={Iara} nome="Iara" cargo="Membro" />
-          <Membro img={Murilo} nome="Murilo" cargo="Membro" />
-          <Membro img={Rafael} nome="Rafael" cargo="Membro" />
-          <Membro img={Valdo} nome="Valdo" cargo="Membro" />
-          <Membro img={Vivian} nome="Vivian" cargo="Apoio à Liderança" />
-
+      {/* Membros */}
+      <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            <div className="min-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {membros.filter(m => m.team !== 'leader').map((membro, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden w-20 h-20 sm:w-30 sm:h-30 md:w-45 md:h-45 border-4 border-[#1C9997] mb-4 shadow-lg">
+                    <img 
+                      src={membro.url} 
+                      alt={`Foto de ${membro.name}`} 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text w-fit md:text-lg text-center text-gray-800">{membro.name}</p>
+                  <p className="text-sm md:text-lg text-center">{membro.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-        
-      */}
-      
-
     </main>
   );
 }
