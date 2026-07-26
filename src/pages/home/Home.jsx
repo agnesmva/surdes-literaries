@@ -3,6 +3,23 @@ import axios from 'axios';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import turquesaGif from '../../assets/Turquesa.gif';
 import dannikiFoto from '../../assets/img/Danniki.jpg';
+import Agnes from '../../assets/img/Agnes.jpg';
+import Airam from '../../assets/img/Airam.jpg';
+import Aldir from '../../assets/img/Aldir.jpg';
+import Aline from '../../assets/img/Aline.jpg';
+import Ana from '../../assets/img/Ana.jpg';
+import Andrew from '../../assets/img/Andrew.jpg';
+import Cass from '../../assets/img/Cass.jpg';
+import Elis from '../../assets/img/Elis.png';
+import Ferdi from '../../assets/img/Ferdi.jpg';
+import Germano from '../../assets/img/Germano.jpg';
+import Giselle from '../../assets/img/Giselle.jpg';
+import Hidel from '../../assets/img/Hidel.jpg';
+import Iara from '../../assets/img/Iara.jpg';
+import Murilo from '../../assets/img/Murilo.jpg';
+import Rafael from '../../assets/img/Rafael.jpg';
+import Valdo from '../../assets/img/Valdo.jpg';
+import Vivian from '../../assets/img/Vivian.jpg';
 
 function MainContent() {
    const [membros, setMembros] = useState([]);
@@ -91,15 +108,15 @@ function MainContent() {
               {(() => {
                 const membrosEquipe = [
                   { name: 'Danniki Martins', role: 'Líder', foto: dannikiFoto },
-                  { name: 'Membro 1', role: 'Cargo 1', foto: null },
-                  { name: 'Membro 2', role: 'Cargo 2', foto: null },
-                  { name: 'Membro 3', role: 'Cargo 3', foto: null },
-                  { name: 'Membro 4', role: 'Cargo 4', foto: null },
-                  { name: 'Membro 5', role: 'Cargo 5', foto: null },
-                  { name: 'Membro 6', role: 'Cargo 6', foto: null },
-                  { name: 'Membro 7', role: 'Cargo 7', foto: null },
-                  { name: 'Membro 8', role: 'Cargo 8', foto: null },
-                  { name: 'Membro 9', role: 'Cargo 9', foto: null },
+                  { name: 'Agnes', role: 'Membro', foto: Agnes },
+                  { name: 'Airam', role: 'Membro', foto: Airam },
+                  { name: 'Aldir', role: 'Membro', foto: Aldir },
+                  { name: 'Aline', role: 'Membro', foto: Aline },
+                  { name: 'Ana', role: 'Membro', foto: Ana },
+                  { name: 'Andrew', role: 'Membro', foto: Andrew },
+                  { name: 'Cass', role: 'Membro', foto: Cass },
+                  { name: 'Elis', role: 'Membro', foto: Elis },
+                  { name: 'Ferdi', role: 'Membro', foto: Ferdi },
                 ];
 
                 return (
