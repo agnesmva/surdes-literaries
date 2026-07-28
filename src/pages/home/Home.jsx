@@ -2,24 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import turquesaGif from '../../assets/Turquesa.gif';
-import dannikiFoto from '../../assets/img/Danniki.jpg';
-import Agnes from '../../assets/img/Agnes.jpg';
-import Airam from '../../assets/img/Airam.jpg';
-import Aldir from '../../assets/img/Aldir.jpg';
-import Aline from '../../assets/img/Aline.jpg';
-import Ana from '../../assets/img/Ana.jpg';
-import Andrew from '../../assets/img/Andrew.jpg';
-import Cass from '../../assets/img/Cass.jpg';
-import Elis from '../../assets/img/Elis.png';
-import Ferdi from '../../assets/img/Ferdi.jpg';
-import Germano from '../../assets/img/Germano.jpg';
-import Giselle from '../../assets/img/Giselle.jpg';
-import Hidel from '../../assets/img/Hidel.jpg';
-import Iara from '../../assets/img/Iara.jpg';
-import Murilo from '../../assets/img/Murilo.jpg';
-import Rafael from '../../assets/img/Rafael.jpg';
-import Valdo from '../../assets/img/Valdo.jpg';
-import Vivian from '../../assets/img/Vivian.jpg';
+import DannikiFoto from '../../assets/img/danniki-martins.png';
+import VivianFoto from '../../assets/img/vivian-juliati.png';
+import CassFoto from '../../assets/img/cassia-palopolo.png';
+import MarianeFoto from '../../assets/img/mariane-noguti.png';
+import GermanoFoto from '../../assets/img/germano-dutra-jr.png';
+import MuriloFoto from '../../assets/img/murilo-silva.png';
+import ValdoFoto from '../../assets/img/valdo-nobrega.png';
+import AiramFoto from '../../assets/img/airam-aime.png';
+import AlineFoto from '../../assets/img/aline-lastorina.png';
+import AndrewFoto from '../../assets/img/andrew-martinelle.png';
+import AgnesFoto from '../../assets/img/agnes-m-varela.png';
+import AnaFoto from '../../assets/img/ana-cuentro.png';
 
 function MainContent() {
    const [membros, setMembros] = useState([]);
@@ -97,7 +91,7 @@ function MainContent() {
         <div className="relative">
           <div className="flex items-center justify-center gap-2 md:gap-8">
             <button
-              onClick={() => setEquipeIndex((prev) => (prev - 1 + 10) % 10)}
+              onClick={() => setEquipeIndex((prev) => (prev - 1 + 10) % 12)}
               className="p-2 rounded-full hover:bg-gray-200 transition-colors"
               aria-label="Membro anterior"
             >
@@ -107,16 +101,18 @@ function MainContent() {
             <div className="w-full md:w-auto">
               {(() => {
                 const membrosEquipe = [
-                  { name: 'Danniki Martins', role: 'Líder', foto: dannikiFoto },
-                  { name: 'Agnes', role: 'Membro', foto: Agnes },
-                  { name: 'Airam', role: 'Membro', foto: Airam },
-                  { name: 'Aldir', role: 'Membro', foto: Aldir },
-                  { name: 'Aline', role: 'Membro', foto: Aline },
-                  { name: 'Ana', role: 'Membro', foto: Ana },
-                  { name: 'Andrew', role: 'Membro', foto: Andrew },
-                  { name: 'Cass', role: 'Membro', foto: Cass },
-                  { name: 'Elis', role: 'Membro', foto: Elis },
-                  { name: 'Ferdi', role: 'Membro', foto: Ferdi },
+                  { name: 'Danniki Martins', role: 'Líder', foto: DannikiFoto },
+                  { name: 'Vívian Juliati', role: 'Apoio à liderança', foto: VivianFoto },
+                  { name: 'Cássia Palópolo', role: 'Criadora de conteúdo', foto: CassFoto },
+                  { name: 'Mariane Noguti', role: 'Criadora de conteúdo', foto: MarianeFoto },
+                  { name: 'Germano Dutra Jr.', role: 'Criador de conteúdo', foto: GermanoFoto },
+                  { name: 'Murilo Silva', role: 'Criador de conteúdo', foto: MuriloFoto },
+                  { name: 'Valdo Nóbrega', role: 'Criador de conteúdo', foto: ValdoFoto },
+                  { name: 'Airam Aimé', role: 'Dublador', foto: AiramFoto },
+                  { name: 'Aline L\'Astorina', role: 'Dubladora', foto: AlineFoto },
+                  { name: 'Andrew Martinelle', role: 'Dublador', foto: AndrewFoto },
+                  { name: 'Agnes M. Varela', role: 'Web Designer', foto: AgnesFoto },
+                  { name: 'Ana Cuentro', role: 'Líder de Design', foto: AnaFoto },
                 ];
 
                 return (
@@ -124,15 +120,15 @@ function MainContent() {
                     {/* Mobile: uma pessoa por vez */}
                     <div className="md:hidden flex flex-col items-center">
                       {(() => {
-                        const membro = membrosEquipe[equipeIndex % 10];
+                        const membro = membrosEquipe[equipeIndex % 12];
                         return (
                           <>
-                            <div className="rounded-full overflow-hidden w-24 h-24 sm:w-32 sm:h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                            <div className="rounded-full overflow-hidden w-24 h-24 sm:w-32 sm:h-32 mb-4 shadow-lg">
                               {membro.foto && (
                                 <img
                                   src={membro.foto}
                                   alt={`Foto de ${membro.name}`}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-cover object-center"
                                   loading="lazy"
                                 />
                               )}
@@ -151,16 +147,16 @@ function MainContent() {
                     {/* Desktop: três pessoas lado a lado */}
                     <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-8 md:min-w-max">
                       {[0, 1, 2].map((offset) => {
-                        const index = (equipeIndex + offset) % 10;
+                        const index = (equipeIndex + offset) % 12;
                         const membro = membrosEquipe[index];
                         return (
                           <div key={index} className="flex flex-col items-center">
-                            <div className="rounded-full overflow-hidden w-32 h-32 border-4 border-[#1C9997] mb-4 shadow-lg bg-[#1C9997]">
+                            <div className="rounded-full overflow-hidden w-32 h-32 mb-4 shadow-lg">
                               {membro.foto && (
                                 <img
                                   src={membro.foto}
                                   alt={`Foto de ${membro.name}`}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-cover object-center"
                                   loading="lazy"
                                 />
                               )}
@@ -181,12 +177,65 @@ function MainContent() {
             </div>
 
             <button
-              onClick={() => setEquipeIndex((prev) => (prev + 1) % 10)}
+              onClick={() => setEquipeIndex((prev) => (prev + 1) % 12)}
               className="p-2 rounded-full hover:bg-gray-200 transition-colors"
               aria-label="Próximo membro"
             >
               <HiChevronRight className="text-2xl md:text-3xl text-[#1C9997]" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Agradecimentos */}
+      <section className="relative px-4 mx-10 md:px-8 md:mx-auto py-12 md:max-w-6xl">
+        <p className="text-center text-gray-700 mb-8">
+          Agradecemos às pessoas que contribuíram para o desenvolvimento do projeto em diferentes momentos.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Aldir Junior</p>
+            <p className="text-gray-600">Criador de conteúdo</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Hidel Silva</p>
+            <p className="text-gray-600">Dublador</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Vanessa Santos</p>
+            <p className="text-gray-600">Edição de vídeos</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Dario Diniz</p>
+            <p className="text-gray-600">Dublador</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Mayara Silva</p>
+            <p className="text-gray-600">Dubladora</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Rafael Oliveira</p>
+            <p className="text-gray-600">Criador de conteúdo</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Elis de Jesus</p>
+            <p className="text-gray-600">Revisora de textos</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Marina Souza</p>
+            <p className="text-gray-600">Pesquisadora</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Gisele</p>
+            <p className="text-gray-600">Pesquisadora</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Ferdinand Oliveira</p>
+            <p className="text-gray-600">Criador de conteúdo</p>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-black mb-1">Pablo Dassero</p>
+            <p className="text-gray-600">Dublador</p>
           </div>
         </div>
       </section>
